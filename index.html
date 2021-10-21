@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Keeper</title>
+    <script
+      src="https://kit.fontawesome.com/6c85aef8db.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="add">Add Bookmark</button>
+      <div class="bookmarks-container"></div>
+    </div>
+
+    <div class="overlay" hidden>
+      <div class="bookmark-form">
+        <div class="title">
+          <h3>Add Bookmark</h3>
+          <i id="cancel-form" class="fas fa-times"></i>
+        </div>
+        <form>
+          <label for="website-name">Website Name</label>
+          <input type="text" name="website-name" id="website-name" />
+          <label for="website-url">Website URL</label>
+          <input type="url" name="website-url" id="website-url" />
+          <button type="submit" id="save">Save</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
