@@ -12,20 +12,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Container -->
     <div class="container">
       <button id="add">Add Bookmark</button>
+      <!-- Bookmark Container -->
       <div class="bookmarks-container"></div>
     </div>
-
-    <div class="overlay" hidden>
+    <!-- Overlay - form to add new bookmark -->
+    <div class="overlay">
       <div class="bookmark-form">
         <div class="title">
           <h3>Add Bookmark</h3>
           <i id="cancel-form" class="fas fa-times"></i>
         </div>
         <form>
+          <!-- Website Name -->
           <label for="website-name">Website Name</label>
           <input type="text" name="website-name" id="website-name" />
+          <!-- Website Url -->
           <label for="website-url">Website URL</label>
           <input type="url" name="website-url" id="website-url" />
           <button type="submit" id="save">Save</button>

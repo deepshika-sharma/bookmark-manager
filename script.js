@@ -19,17 +19,18 @@ const createBookmark = (name, url) => {
   title.classList.add("title");
   let info = document.createElement("div");
   info.classList.add("info");
-  let heading = document.createElement("h3");
+  // let heading = document.createElement("h3");
   let icon = document.createElement("i");
   icon.classList.add("fas", "fa-times", "remove");
+  icon.setAttribute("title", "Delete Bookmark");
   let link = document.createElement("a");
   let favicon = document.createElement("img");
   favicon.setAttribute("src", `${url}/favicon.ico`);
   link.setAttribute("href", url);
   link.setAttribute("target", "_blank");
-  link.textContent = url;
-  heading.textContent = name;
-  title.appendChild(heading);
+  link.textContent = name;
+  // heading.textContent = name;
+  // title.appendChild(heading);
   title.appendChild(icon);
   bookmark.appendChild(title);
   info.appendChild(favicon);
@@ -74,13 +75,13 @@ const loadBookmarks = () => {
 // Add New Bookmark
 addBtn.addEventListener("click", () => {
   container.style.position = "absolute";
-  overlay.hidden = false;
+  overlay.style.display = "flex";
 });
 
 // Cancel Form Event Listener
 cancelForm.addEventListener("click", () => {
   container.style.position = "static";
-  overlay.hidden = true;
+  overlay.style.display = "none";
 });
 
 // Save Event Listener
@@ -97,7 +98,7 @@ saveBtn.addEventListener("click", (e) => {
   webUrl.value = "";
   webName.value = "";
   container.style.position = "static";
-  overlay.hidden = true;
+  overlay.style.display = "none";
 });
 
 // OnLoad
