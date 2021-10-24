@@ -53,14 +53,23 @@ body {
 
 /* Overlay */
 .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   /* border: 3px solid yellow; */
   width: 100vw;
   height: 100vh;
   display: none;
-  justify-content: center;
-  align-items: center;
   background: rgba(0, 0, 0, 0.7);
   z-index: 5;
+}
+
+.show-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay .title {
@@ -70,9 +79,9 @@ body {
 
 /* Form */
 .bookmark-form {
-  /* border: 3px solid red; */
-  width: 40%;
-  /* margin: 0 auto; */
+  width: 500px;
+  max-width: 95%;
+  animation: formopen 5s;
 }
 
 .title {
@@ -162,6 +171,16 @@ img {
   padding: 5px;
 }
 
+/* Animation */
+@keyframes formopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
   .bookmarks-container {
@@ -177,4 +196,8 @@ img {
   #add {
     padding: 10px;
   }
+
+  /* .bookmark-form {
+    width: 90%;
+  } */
 }

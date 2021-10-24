@@ -19,7 +19,6 @@ const createBookmark = (name, url) => {
   title.classList.add("title");
   let info = document.createElement("div");
   info.classList.add("info");
-  // let heading = document.createElement("h3");
   let icon = document.createElement("i");
   icon.classList.add("fas", "fa-times", "remove");
   icon.setAttribute("title", "Delete Bookmark");
@@ -29,8 +28,6 @@ const createBookmark = (name, url) => {
   link.setAttribute("href", url);
   link.setAttribute("target", "_blank");
   link.textContent = name;
-  // heading.textContent = name;
-  // title.appendChild(heading);
   title.appendChild(icon);
   bookmark.appendChild(title);
   info.appendChild(favicon);
@@ -44,7 +41,7 @@ const createBookmark = (name, url) => {
     removeBookmark[i].addEventListener("click", () => {
       removeBookmark[i].parentElement.parentElement.remove();
       let key =
-        removeBookmark[i].parentElement.parentElement.children[0].children[0]
+        removeBookmark[i].parentElement.parentElement.children[1].children[1]
           .textContent;
       delete bookmarkObj[key];
 
@@ -65,7 +62,6 @@ const loadBookmarks = () => {
     bookmarkObj = JSON.parse(localStorage.getItem("bookmarks"));
     if (Object.keys(bookmarkObj).length) {
       for (let key in bookmarkObj) {
-        // console.log(key, bookmarkObj[key]);
         createBookmark(key, bookmarkObj[key]);
       }
     }
@@ -75,13 +71,13 @@ const loadBookmarks = () => {
 // Add New Bookmark
 addBtn.addEventListener("click", () => {
   container.style.position = "absolute";
-  overlay.style.display = "flex";
+  overlay.classList.add("show-overlay");
 });
 
 // Cancel Form Event Listener
 cancelForm.addEventListener("click", () => {
   container.style.position = "static";
-  overlay.style.display = "none";
+  overlay.classList.remove("show-overlay");
 });
 
 // Save Event Listener
@@ -98,7 +94,7 @@ saveBtn.addEventListener("click", (e) => {
   webUrl.value = "";
   webName.value = "";
   container.style.position = "static";
-  overlay.style.display = "none";
+  overlay.classList.remove("show-overlay");
 });
 
 // OnLoad
